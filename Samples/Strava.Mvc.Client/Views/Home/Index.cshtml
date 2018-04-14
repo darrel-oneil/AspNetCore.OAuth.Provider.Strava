@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Strava.Mvc.Client";
+}
+
+<h1 class="page-header">Getting Started</h1>
+<p class="lead">Sample application showing how to connect to Strava using the ASP.NET Core 2.0 OAuth authentication middleware.</p>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron">
+                <p>Add your own Strava App <em><strong>ClientId</strong></em> and <em><strong>ClientSecret</strong></em> to the <em>appsetting.json</em> file before connecting.</p>
+                <a class="strava-connect" asp-controller="Strava" asp-action="Connect">
+                    <img src="/images/btn_strava_connectwith_orange.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Authenticated</div>
+                <div class="panel-body">
+                    @foreach (var claim in User.Claims)
+                    {
+                        <p><strong>@claim.Type</strong> &ndash; @claim.Value</p>
+                    }
+                </div>
+            </div>
+               
+        </div>
+    </div>
+}

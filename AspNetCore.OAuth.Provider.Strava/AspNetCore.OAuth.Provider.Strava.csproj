@@ -14,6 +14,9 @@
     <PackageTags>aspnetcore authentication oauth security strava</PackageTags>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/darrel-oneil/AspNetCore.OAuth.Provider.Strava</PackageProjectUrl>
+    <PackageIconUrl>https://user-images.githubusercontent.com/2548239/38587493-9800d2e0-3d19-11e8-8245-bdedd7d74a5c.png</PackageIconUrl>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
