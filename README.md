@@ -24,10 +24,16 @@ To install from the .NET CLI
 To use add the following to the *ConfigureServices* methods in your *Startup.cs* class:
 
 ```
-app.UseStrava(options =>
+services.AddAuthentication(options =>
 {
-    options.ClientId = "<Your Strava Apps OAuth 2.0 Client ID>";
-    options.ClientSecret = "<Your Strava Apps OAuth 2.0 Client Secret>";
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddStrava(options =>
+{
+    options.ClientId = Configuration.GetValue<int>("Strava:ClientId").ToString();
+    options.ClientSecret = Configuration.GetValue<string>("Strava:ClientSecret");
 });
 ```
 ## Access token scope
